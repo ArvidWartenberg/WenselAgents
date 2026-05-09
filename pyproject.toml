@@ -5,18 +5,21 @@ description = "Agentic workflows for various tasks using CrewAI and Ollama."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "crewai[tools]>=1.14.0",    # Core framework + built-in tools
-    "crewai-tools>=1.14.0",     # Extra tools (PDF search, Scrapers, etc.)
-    "ollama>=0.4.0",            # Python client for your local backend
-    "pydantic>=2.10.0",         # For structured data/legal parsing
-    "python-dotenv>=1.0.1",     # To manage your local environment variables
+    "crewai[tools]",       # Get the latest
+    "crewai-tools",        # Get the latest
+    "ollama",              # Get the latest
+    "pydantic",            # Get the latest
+    "python-dotenv",       # Get the latest
+    "langchain-community", # Get the latest
+    "litellm",             # Get the latest
+    "streamlit>=1.57.0",
 ]
 
 [dependency-groups]
 dev = [
-    "ruff>=0.9.0",              # Lightning fast linting/formatting
-    "pytest>=8.0.0",            # Testing your agent logic
-    "ipykernel>=6.29.0",        # If you want to use Jupyter notebooks
+    "ruff",
+    "pytest",
+    "ipykernel",
 ]
 
 [tool.uv]

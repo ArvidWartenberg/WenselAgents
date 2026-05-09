@@ -24,5 +24,31 @@ managed = true
 package = false
 
 [tool.ruff]
-line-length = 88
 target-version = "py312"
+line-length = 100 
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes (logic/syntax errors)
+    "I",    # isort (import sorting)
+    "B",    # flake8-bugbear (common design flaws)
+    "C4",   # flake8-comprehensions (optimized collection usage)
+    "UP",   # pyupgrade (modernize syntax)
+    "ASYNC",# flake8-async (crucial for agentic/async code)
+    "S",    # flake8-bandit (security checks for API keys/shell execution)
+    "RUF",  # Ruff-specific rules (highly optimized checks)
+]
+ignore = [
+    "D",    # We skip Docstring requirements (too anal for most)
+    "ANN",  # We skip mandatory Type Annotations (keeps prototyping fast)
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["src"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"

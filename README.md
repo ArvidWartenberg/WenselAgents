@@ -4,7 +4,6 @@
 `uv` is used for this project.
 
 ```bash
-# Install uv
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 

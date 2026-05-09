@@ -1,13 +1,32 @@
-# Python
+# --- Python & Environment ---
 __pycache__/
 *.py[cod]
 *$py.class
 .venv/
-uv.lock
+# NOTE: Do NOT ignore uv.lock if you want reproducible builds on GitHub
+# But if you want a clean "scripts only" repo, you can keep it here.
 
-# Environment variables
+# --- Environment Variables (CRITICAL) ---
 .env
+.env.*
+# Ignore keys and secrets accidentally left in the root
+*.pem
+*.key
 
-# CrewAI / Agents
+# --- VS Code Configuration ---
+.vscode/*
+# We keep settings so Ruff and "Format on Save" work for everyone
+!.vscode/settings.json
+# We ignore launch.json as requested
+.vscode/launch.json
+
+# --- Agent / CrewAI Logs & State ---
 logs/
 *.log
+# Ignore sqlite DBs if your agents use persistent memory locally
+*.db
+*.sqlite
+
+# --- OS Specific ---
+.DS_Store
+thumbs.db

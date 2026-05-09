@@ -1,0 +1,21 @@
+{
+  // Use the Python environment managed by uv
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  
+  // Set Ruff as the primary tool for everything
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit"
+    }
+  },
+
+  // Ensure Ruff uses your pyproject.toml rules
+  "ruff.configuration": "${workspaceFolder}/pyproject.toml",
+  
+  // Optional: Make the editor cleaner
+  "editor.rulers": [100],
+  "editor.renderWhitespace": "selection"
+}
